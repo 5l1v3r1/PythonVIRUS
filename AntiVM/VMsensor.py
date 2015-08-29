@@ -74,10 +74,8 @@ class TestVM(object):
 		for proc in psutil.process_iter():
 			try:
 				if "VBox" in proc.name():
-					print proc.name()
+					return True;
 			except:
 				pass
 		return False
 				
-#from new import TestVM 
-#print TestVM().checkVirtualMachine()				
