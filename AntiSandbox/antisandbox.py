@@ -1,10 +1,9 @@
-import win32api
+from win32api import GetModuleHandle
 #Coded By B3mB4m
 
 def antisandbox():
 	try:
-		win32api.GetModuleHandle("sbiedll.dll")
+		GetModuleHandle("sbiedll.dll")
 		return True
 	except:
 		return False
-		
