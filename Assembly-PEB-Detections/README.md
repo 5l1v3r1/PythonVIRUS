@@ -1,4 +1,4 @@
-#This time we will use this three topics to our codes.
+#This time we will use this three(+one little python function) topics to our codes.
         http://sysfail.shost.ca/papers/basic_anti_debug/ 
         http://www.seculert.com/blog/2015/04/new-dyre-version-evades-sandboxes.html (2015)
         http://www.powershow.com/view/d042c-OTYxM/Antidebugger_techniques_powerpoint_ppt_presentation
