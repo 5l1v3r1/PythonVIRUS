@@ -10,6 +10,6 @@ This project will not include only "backdoor" or something usual codes .. Well, 
         Broke ollydbg&IDA pro etc .. 
 
 
-Also I will add sometimes C,Assembly versions of tricks. 
+Also we will convert C,Assembly codes to python .. 
 
 #b3mb4m@tuta.io
