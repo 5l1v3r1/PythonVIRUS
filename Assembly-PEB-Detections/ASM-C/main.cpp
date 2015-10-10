@@ -13,7 +13,7 @@ int main( void )
 	//You can use NtGlobalFlag64 bit version too.
 	if(timedetect()) exit(0);
 
-	printf("Virtual Box not detected !");
+	printf("Virtual Machine or Debugger not detected !");
 	
 }
 
