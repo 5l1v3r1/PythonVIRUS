@@ -8,7 +8,7 @@
 int main( void )
 {
 	if(processor() == 1)	exit(0);
-	if(isdebugged() == 1)	exit(0);
+	if(isdebugged())	exit(0);
 	if (NtGlobalFlag32() == 0x70)	exit(0);
 	//You can use NtGlobalFlag64 bit version too.
 
