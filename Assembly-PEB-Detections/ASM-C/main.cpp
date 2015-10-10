@@ -11,6 +11,7 @@ int main( void )
 	if(isdebugged())	exit(0);
 	if (NtGlobalFlag32() == 0x70)	exit(0);
 	//You can use NtGlobalFlag64 bit version too.
+	if(timedetect()) exit(0);
 
 	printf("Virtual Box not detected !");
 	
