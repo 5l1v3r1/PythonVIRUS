@@ -1,6 +1,11 @@
-      from detector import immunityANDollydbg
+    from detector import immunityANDollydbg
       
-      if immunityANDollydbg() == True:
-          print "Debugger killed."
+    if immunityANDollydbg() == True:
+        print "Debugger killed."
           
-//0.1-0.4 sec in .. (at least on my computer)
+      
+    from timedetech import timedetech
+    
+    if timedetech() == True:
+        print "Debugger detected."    
+            
