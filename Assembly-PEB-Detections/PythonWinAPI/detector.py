@@ -23,15 +23,22 @@ Thus the following code makes it crash.
 #Otherwise, return None like useless line.
 
 
+import win32api
+import win32gui
+import win32con
+import os
+
 def immunityANDollydbg():
 	win32api.OutputDebugString("%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s")
-	#I did try on Immunity Debugger and worked(2015)
-	name = "Immunity Debugger - %s - [CPU - main thread, module %s]" % (os.path.basename(__file__),os.path.basename(__file__).split("exe")[0])
-	name2 = "OllyDbg - %s - [CPU - main thread, module %s]" % (os.path.basename(__file__),os.path.basename(__file__).split("exe")[0])
+	#b3mb4m@tuta.io
+	name = "Immunity Debugger - %s - [CPU - main thread, module %s]" % (os.path.basename(__file__).split(".py")[0]+".exe",os.path.basename(__file__).split(".py")[0])
+	name2 = "OllyDbg - %s - [CPU - main thread, module %s]" % (os.path.basename(__file__).split(".py")[0]+".exe",os.path.basename(__file__).split(".py")[0])
+	print name
 	for x in [name,name2]:
 		handle = win32gui.FindWindow(None, x)
 		win32gui.PostMessage(handle,win32con.WM_CLOSE,0,0)
 		if handle != 0:
 			return True
 	return False
+
 
