@@ -10,3 +10,6 @@ This is will be a lot of fun ! Cos we will work on assembly and TEB structure al
 #Requirements informations
       TEB - Thread Information Block
       PEB - Process Environment Block
+
+#Frist script complate:
+                https://github.com/b3mb4m/PythonVIRUS/blob/master/FinishedScripts/antidebug.py
