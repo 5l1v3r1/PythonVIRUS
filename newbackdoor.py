@@ -1,6 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+#https://github.com/b3mb4m/PythonVIRUS/blob/master/FinishedScripts/antidebug.py
+import antidebug
+
+
 import os
 import ftplib 
 import shutil
