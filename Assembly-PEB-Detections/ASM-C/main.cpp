@@ -9,8 +9,12 @@ int main( void )
 {
 	if(processor() == 1)	exit(0);
 	if(isdebugged())	exit(0);
-	if (NtGlobalFlag32() == 0x70)	exit(0);
-	//You can use NtGlobalFlag64 bit version too.
+	
+	if (sizeof(void*) == 4)
+		if (NtGlobalFlag32() == 0x70)	exit(0);
+	else if(sizeof(void*) == 8)
+	    if (NtGlobalFlag64() == 0x70)	exit(0);
+
 	if(timedetect()) exit(0);
 
 	printf("Virtual Machine or Debugger not detected !");
