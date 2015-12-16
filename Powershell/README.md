@@ -7,7 +7,8 @@
 
 ![alt tag](http://i.hizliresim.com/827rpn.png)
 
+#Also FUD
 
-![alt tag](http://viruscheckmate.com/image/7B8rTXub7urf/full/img.png)
+![alt tag](http://viruscheckmate.com/image/lKxtVhcm6XaS/full/img.png)
 
 #b3mb4m@tuta.io
