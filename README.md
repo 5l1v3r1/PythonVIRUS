@@ -1,4 +1,5 @@
 #PythonVIRUS
+	Everything can be possible with python.So just check it if you are not agree with me :>
 
 #We will work on 
         Virtual machine detecting
@@ -8,7 +9,7 @@
         Broke ollydbg&IDA pro etc .. 
 
 #HOT NEW
-		We already start convert projects to python(any language to python)
+	We already start convert projects to python(any language to python)
 
 
 
