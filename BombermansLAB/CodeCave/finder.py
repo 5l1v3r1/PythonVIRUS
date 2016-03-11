@@ -24,5 +24,5 @@ def CClength( exe):
 
 
 if __name__ == '__main__':
-	print ("\nMaximum code cove size :  {0} \n").format(CClength( sys.argv[1]))
+	print ("\nMaximum code cave size :  {0} \n").format(CClength( sys.argv[1]))
 	
