@@ -21,5 +21,3 @@
 
 
 #b3mb4m@protonmail.com
-#b3mb4m@sigaint.org
-#b3mb4m@tuta.io
