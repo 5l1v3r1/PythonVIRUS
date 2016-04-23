@@ -37,12 +37,9 @@ int NtGlobalFlag64(void){
  	__asm__
   	(
   		".intel_syntax noprefix;"
-  		"xor eax,eax;"
-  		"xor ebx,ebx;"
-    	"mov ebx,[fs:0x30];"         
-		"mov al, [eax+0x10bc];"
-		"and al, 0x70;"       
-		//+0x10bc NtGlobalFlag : Uint4B (64bit)
+  		"xor rax, rax;"
+    		"mov rbx, qword ptr gs:[0x60];"      
+		"mov eax, dword ptr [rbx + 0xbc];" 
      );
  
 }
